@@ -309,6 +309,7 @@ focus-buffer-switcher.label=$Fokus auf Datei-Umschalter
 toggle-line-numbers.label=$Zeilennummern Ein/Aus
 toggle-statusbar.label=$Statuszeile Ein/Aus
 toggle-gutter.label=G$utter Ein/Aus
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=Zeige Kontextmenü
 set-view-title.label=Titel für Ansicht setzen...
 set-view-title.tooltip=Setzt den Titel eines Hauptfensters zwecks einfacher Identifizierung auf dem Desktop

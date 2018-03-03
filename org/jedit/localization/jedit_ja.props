@@ -271,6 +271,7 @@ focus-buffer-switcher.label=バッファスイッチャにフォーカス($W)
 toggle-line-numbers.label=行番号の表示($L)
 toggle-statusbar.label=ステータスバーの表示($T)
 toggle-gutter.label=ガターの表示($G)
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=コンテキストメニューを表示
 set-view-title.label=ビューのタイトルを設定...
 set-view-title.tooltip=デスクトップ上で区別しやすいよう、メインウィンドウのタイトルを設定します。

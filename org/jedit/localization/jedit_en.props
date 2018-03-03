@@ -274,6 +274,7 @@ focus-buffer-switcher.label=Focus on Buffer S$witcher
 toggle-line-numbers.label=Toggle $Line Numbers
 toggle-statusbar.label=Toggle S$tatus Bar
 toggle-gutter.label=Toggle $Gutter
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=Show Context Menu
 set-view-title.label=Set view title...
 set-view-title.tooltip=Set the title of the main window for easy identification from your desktop.

@@ -1551,6 +1551,17 @@
 	</IS_SELECTED>
 </ACTION>
 
+<ACTION NAME="toggle-scrollbars">
+	<CODE>
+		boolean showing = jEdit.getBooleanProperty("view.textarea.scrollbars.enabled");
+		jEdit.setBooleanProperty("view.textarea.scrollbars.enabled", !showing);
+		textArea.toggleScrollbars(!showing);
+	</CODE>
+	<IS_SELECTED>
+		return jEdit.getBooleanProperty("view.textarea.scrollbars.enabled");
+	</IS_SELECTED>
+</ACTION>
+
 <ACTION NAME="toggle-line-numbers">
 	<CODE>
 		boolean shown = jEdit.getBooleanProperty("view.gutter.lineNumbers");

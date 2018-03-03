@@ -271,6 +271,7 @@ focus-buffer-switcher.label=Fo$cus na selektor bufferu
 toggle-line-numbers.label=Zobrazit čí$sla řádek
 toggle-statusbar.label=Zobrazit s$tavový řádek
 toggle-gutter.label=Zobrazit $Gutter
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=Zobrazit $kontextové menu
 set-view-title.label=Nastavit $název zobrazení
 set-view-title.tooltip=Nastaví název hlavního okna pro jednoduchou identifikaci z plochy.

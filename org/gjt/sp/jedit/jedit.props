@@ -383,6 +383,10 @@ view.gutter.selectionAreaEnabled=true
 #view.gutter.selectionAreaBgColor=#dbdbdb
 #}}}
 
+
+# TextArea Scrollbars enabling
+view.textarea.scrollbars.enabled=true
+
 # Expand abbrevs when space bar pressed
 view.expandOnInput=false
 

@@ -271,6 +271,7 @@ focus-buffer-switcher.label=Фокус на переключатель буфе�
 toggle-line-numbers.label=Номера строк($L)
 toggle-statusbar.label=Строка состояния($t)
 toggle-gutter.label=Кант($G)
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=Контекстное меню
 set-view-title.label=Ввести имя виду...
 set-view-title.tooltip=Ввести имя для окна для отличия от других окон.

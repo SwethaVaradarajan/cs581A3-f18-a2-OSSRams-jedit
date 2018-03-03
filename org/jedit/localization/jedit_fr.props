@@ -272,6 +272,7 @@ focus-buffer-switcher.label=Activer le sélecteur de tampons
 toggle-line-numbers.label=Numéros de $Lignes
 toggle-statusbar.label=$Barre d'état
 toggle-gutter.label=$Marge
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=Menu contextuel
 set-view-title.label=Définir un titre à la fenêtre...
 set-view-title.tooltip=Défini le titre de la fenêtre principale pour identification aisée à partir du bureau.

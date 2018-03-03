@@ -6744,4 +6744,9 @@ loop:		for(int i = lineNo - 1; i >= 0; i--)
 			return painter;
 		}
 	}
+	
+	public void toggleScrollbars(boolean show){
+		vertical.setVisible(show);
+		horizontal.setVisible(show);
+	}
 }

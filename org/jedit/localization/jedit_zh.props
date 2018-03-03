@@ -271,6 +271,7 @@ focus-buffer-switcher.label=聚焦缓冲切换(Focus on Buffer S$witcher)
 toggle-line-numbers.label=切换行号(Toggle $Line Numbers)
 toggle-statusbar.label=切换状态栏(Toggle S$tatus Bar)
 toggle-gutter.label=切换装订线(Toggle $Gutter)
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=显示上下文菜单
 set-view-title.label=设置视图标题...
 set-view-title.tooltip=设置主窗口标题以方便识别

@@ -272,6 +272,7 @@ focus-buffer-switcher.label=버퍼 전환창 바로가기($w)
 toggle-line-numbers.label=행번호 보기($L)
 toggle-statusbar.label=상태창 보기($t)
 toggle-gutter.label=행 정보영역 보기($G)
+toggle-scrollbars.label = Toggle Scrollbars
 show-context-menu.label=Show Context Menu
 set-view-title.label=jEdit 창 이름 설정...
 set-view-title.tooltip=jEdit 창 사이에 분별하기 쉽도록 이름을 붙입니다.
