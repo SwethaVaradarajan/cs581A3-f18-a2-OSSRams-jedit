@@ -41,6 +41,8 @@ import org.gjt.sp.util.GenericGUIUtilities;
  */
 public class FilesChangedDialog extends EnhancedDialog
 {
+	private FilesChangedDialogUpdateButtons filesChangedDialogUpdateButtons = new FilesChangedDialogUpdateButtons();
+
 	//{{{ FilesChangedDialog constructor
 	public FilesChangedDialog(View view, int[] states,
 		boolean alreadyReloaded)
@@ -140,20 +142,19 @@ public class FilesChangedDialog extends EnhancedDialog
 
 			buttons.add(Box.createHorizontalStrut(6));
 
-			reload = new JButton(jEdit.getProperty(
-				"files-changed.reload"));
-			reload.setMnemonic(jEdit.getProperty(
+			filesChangedDialogUpdateButtons.setReload(new JButton(jEdit.getProperty("files-changed.reload")));
+			filesChangedDialogUpdateButtons.getReload().setMnemonic(jEdit.getProperty(
 				"files-changed.reload.mnemonic").charAt(0));
-			buttons.add(reload);
-			reload.addActionListener(new ActionHandler());
+			buttons.add(filesChangedDialogUpdateButtons.getReload());
+			filesChangedDialogUpdateButtons.getReload().addActionListener(new ActionHandler());
 
 			buttons.add(Box.createHorizontalStrut(6));
 
-			ignore = new JButton(jEdit.getProperty("files-changed.ignore"));
-			ignore.setMnemonic(jEdit.getProperty(
+			filesChangedDialogUpdateButtons.setIgnore(new JButton(jEdit.getProperty("files-changed.ignore")));
+			filesChangedDialogUpdateButtons.getIgnore().setMnemonic(jEdit.getProperty(
 				"files-changed.ignore.mnemonic").charAt(0));
-			buttons.add(ignore);
-			ignore.addActionListener(new ActionHandler());
+			buttons.add(filesChangedDialogUpdateButtons.getIgnore());
+			filesChangedDialogUpdateButtons.getIgnore().addActionListener(new ActionHandler());
 
 			buttons.add(Box.createHorizontalStrut(6));
 		}
@@ -183,7 +184,7 @@ public class FilesChangedDialog extends EnhancedDialog
 
 		GenericGUIUtilities.requestFocus(this,bufferTree);
 
-		updateEnabled();
+		filesChangedDialogUpdateButtons.updateEnabled(this.bufferTree);
 
 		pack();
 		setLocationRelativeTo(view);
@@ -212,32 +213,7 @@ public class FilesChangedDialog extends EnhancedDialog
 	// hack so that 'select all' does not change current buffer
 	private boolean selectAllInProgress;
 
-	private JButton reload;
-	private JButton ignore;
 	private JButton close;
-
-	//{{{ updateEnabled() method
-	private void updateEnabled()
-	{
-		TreePath[] paths = bufferTree
-			.getSelectionPaths();
-		boolean enabled = false;
-		if(paths != null)
-		{
-			for (TreePath tp : paths)
-			{
-				Object[] path = tp.getPath();
-				if (path.length == 3)
-					enabled = true;
-			}
-		}
-
-		if(reload != null)
-			reload.setEnabled(enabled);
-
-		if (ignore != null)
-			ignore.setEnabled(enabled);
-	} //}}}
 
 	//{{{ selectAll() method
 	private void selectAll()
@@ -266,7 +242,7 @@ public class FilesChangedDialog extends EnhancedDialog
 
 		selectAllInProgress = false;
 
-		updateEnabled();
+		filesChangedDialogUpdateButtons.updateEnabled(this.bufferTree);
 	} //}}}
 
 	//{{{ reload() method
@@ -358,11 +334,11 @@ public class FilesChangedDialog extends EnhancedDialog
 			Object source = evt.getSource();
 			if(source == selectAll)
 				selectAll();
-			else if(source == reload)
+			else if(source == filesChangedDialogUpdateButtons.getReload())
 				action("RELOAD");
 			else if(source == close)
 				dispose();
-			else if (source == ignore)
+			else if (source == filesChangedDialogUpdateButtons.getIgnore())
 				action("IGNORE");
 		}
 	} //}}}
@@ -375,7 +351,7 @@ public class FilesChangedDialog extends EnhancedDialog
 			if(selectAllInProgress)
 				return;
 
-			updateEnabled();
+			filesChangedDialogUpdateButtons.updateEnabled(bufferTree);
 
 			TreePath[] paths = bufferTree
 				.getSelectionPaths();
