@@ -140,4 +140,7 @@ public abstract class SearchMatcher
 			return "Match[" + start + ',' + end + ']';
 		}
 	} //}}}
+
+	public abstract void doHyperSearch(HyperSearchRequest hyperSearchRequest);
 }
+

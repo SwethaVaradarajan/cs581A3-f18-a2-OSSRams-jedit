@@ -333,5 +333,10 @@ public class BoyerMooreSearchMatcher extends SearchMatcher
 		return suffix;
 	} //}}}
 
+	public void doHyperSearch(HyperSearchRequest hyperSearchRequest) {
+		hyperSearchRequest.setCancellable(true);
+	}
+
 	//}}}
 }
+

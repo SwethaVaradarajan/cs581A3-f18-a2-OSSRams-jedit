@@ -318,5 +318,9 @@ public class PatternSearchMatcher extends SearchMatcher
 	private Pattern	re;
 	private final String pattern;
 	//}}}
+	public void doHyperSearch(HyperSearchRequest hyperSearchRequest) {
+		hyperSearchRequest.setCancellable(false);
+	}
 }
+
 
