@@ -39,7 +39,7 @@ public class EmacsUtil {
 		int caret2 = caret + 1;		
 		while (caret2 < lineEnd)
 		{
-			char ch = charAt (caret2);
+			char ch = buffer.charAt (caret2);
 			
 			if (! Character.isWhitespace (ch))
 				break;
@@ -114,19 +114,13 @@ public class EmacsUtil {
 		
 		while (! atEndOfBuffer (i))
 		{
-			char c = charAt (i);
+			char c = buffer.charAt (i);
 			sb.append(c);
 			if (c == '\n')
 				break;
 		}
 		
 		return sb.toString();
-	}
-	
-	public char charAt (int i)
-	{
-		if (i >= buffer.getLength()) return 0;
-		return buffer.getText (i, 1).charAt (0);
 	}
 	
 	public char charAtCaret()
@@ -332,8 +326,8 @@ public class EmacsUtil {
 			if (atEndOfBuffer (caret))
 				break;
 	
-			char ch = charAt (caret);
-			if (ch == '.' && Character.isWhitespace (charAt (caret + 1)))
+			char ch = buffer.charAt (caret);
+			if (ch == '.' && Character.isWhitespace (buffer.charAt (caret + 1)))
             {
 					caret++;
 					break;
@@ -348,7 +342,7 @@ public class EmacsUtil {
 	public int findBeginningOfSentence()
 	{
 		int caret = textArea.getCaretPosition() - 1;
-		if (charAt (caret) == '.')
+		if (buffer.charAt (caret) == '.')
 			caret--;
 	
 		for (;;)
@@ -356,10 +350,10 @@ public class EmacsUtil {
 			if (caret <= 0)
 				break;
 	
-			char ch = charAt (caret);
+			char ch = buffer.charAt (caret);
 			if (ch == '.')
 			{
-				if (Character.isWhitespace (charAt (caret + 1)))
+				if (Character.isWhitespace (buffer.charAt (caret + 1)))
 				{
 					caret++;
 					break;
@@ -371,7 +365,7 @@ public class EmacsUtil {
 				caret--;
 				if (caret <= 0)
 					break;
-				if (Character.isWhitespace (charAt (caret)))
+				if (Character.isWhitespace (buffer.charAt (caret)))
 					break;
 			}
 	

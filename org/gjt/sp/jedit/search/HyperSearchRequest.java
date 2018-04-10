@@ -222,10 +222,7 @@ class HyperSearchRequest extends Task
 	private int doHyperSearch(Buffer buffer, int start, int end)
 		throws Exception
 	{
-		if(matcher instanceof BoyerMooreSearchMatcher)
-			setCancellable(true);
-		else
-			setCancellable(false);
+		matcher.doHyperSearch(this);
 
 		HyperSearchFileNode hyperSearchFileNode = new HyperSearchFileNode(buffer.getPath());
 		DefaultMutableTreeNode bufferNode = new DefaultMutableTreeNode(hyperSearchFileNode);
@@ -310,3 +307,4 @@ class HyperSearchRequest extends Task
 
 	//}}}
 }
+

@@ -2999,4 +2999,11 @@ loop:		for(int i = 0; i < seg.count; i++)
 	}
 	 //}}}
 //}}}
+
+	public char charAt(int i) {
+		if (i >= getLength())
+			return 0;
+		return getText(i, 1).charAt(0);
+	}
 }
+
